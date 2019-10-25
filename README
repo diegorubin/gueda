@@ -1,9 +1,1 @@
-Pequeno aplicativo escrito em c para meu curso de calculo 1.
-Um pequeno simulador de queda livre.
-Para utiliza-lo é necessário ter instalado as libs de
-desenvolvimento do gtk. e também ter instalado o
-gnuplot.
-
-Este aplicativo está sobre a GPL 2, porém as linceças
-não estão escritas nos arquivos como deveria estar.
-
+README.md
