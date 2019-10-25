@@ -18,61 +18,55 @@
 
 #include <math.h>
 
-gdouble static expo(gdouble numero, gint exponencial)
-{
-	gdouble vfnumero = 1;
-	int i;
-	if (exponencial !=0) 
-	for(i = 1; i <= exponencial; i = i + 1)
-		vfnumero = vfnumero * numero;
-	return vfnumero;
-}	
-
-gdouble static calcula_delta_s_aprox(gdouble gravidade, gint instante)
-{
-	gdouble espaco;
-	
-	espaco = (gravidade * expo(instante,2)) / 2;
-	return espaco;
-}
- 
-gdouble static calcula_aceleracao( gdouble massa, gdouble raio, gdouble altura,gint expM, gint expR)
-{	
-	gint exp;
-	gfloat Const;
-	Const=6.7;
-	gint expG = -11;
-	gdouble gravidade;
-	
-	exp = expM +  expG ;
-	gravidade	= ((massa * Const) / ( expo( (raio * expo(10,expR) + altura),2) ));
-	gravidade = gravidade * expo(10, exp);
-	return gravidade;
+gdouble static expo(gdouble numero, gint exponencial) {
+  gdouble vfnumero = 1;
+  int i;
+  if (exponencial != 0)
+    for (i = 1; i <= exponencial; i = i + 1)
+      vfnumero = vfnumero * numero;
+  return vfnumero;
 }
 
-gdouble static calcula_s(gdouble gravidade, gdouble instante)
-{
-	gdouble espaco;
-	
-	espaco = (gravidade * expo(instante,2)) / 2;
-	return espaco;
+gdouble static calcula_delta_s_aprox(gdouble gravidade, gint instante) {
+  gdouble espaco;
+
+  espaco = (gravidade * expo(instante, 2)) / 2;
+  return espaco;
 }
 
-gdouble static calcula_v(gdouble gravidade, gdouble instante)
-{
-	gdouble velocidade;
-	
-	velocidade = (gravidade * instante);
-	return velocidade;
-	
+gdouble static calcula_aceleracao(gdouble massa, gdouble raio, gdouble altura,
+                                  gint expM, gint expR) {
+  gint exp;
+  gfloat Const;
+  Const = 6.7;
+  gint expG = -11;
+  gdouble gravidade;
+
+  exp = expM + expG;
+  gravidade = ((massa * Const) / (expo((raio * expo(10, expR) + altura), 2)));
+  gravidade = gravidade * expo(10, exp);
+  return gravidade;
 }
 
-int static acha_tf(gdouble gravidade, gdouble altura)
-{
-	gdouble tf;
-	
-	tf = sqrt((2 * altura)/gravidade);
-	return tf;
+gdouble static calcula_s(gdouble gravidade, gdouble instante) {
+  gdouble espaco;
+
+  espaco = (gravidade * expo(instante, 2)) / 2;
+  return espaco;
+}
+
+gdouble static calcula_v(gdouble gravidade, gdouble instante) {
+  gdouble velocidade;
+
+  velocidade = (gravidade * instante);
+  return velocidade;
+}
+
+int static acha_tf(gdouble gravidade, gdouble altura) {
+  gdouble tf;
+
+  tf = sqrt((2 * altura) / gravidade);
+  return tf;
 }
 
 #endif

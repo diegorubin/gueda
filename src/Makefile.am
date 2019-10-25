@@ -49,7 +49,7 @@ gueda_SOURCES = \
 	../pixmaps/venus.png \
 	../pixmaps/planeta_kayo.png 
 
-gueda_LDFLAGS = 
+gueda_LDFLAGS = -lm
 
 gueda_LDADD = $(GUEDA_LIBS)
 
